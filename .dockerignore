@@ -1,0 +1,10 @@
+.hg/
+.git/
+.idea/
+.hgignore
+node_modules/
+LICENSE
+*.md
+nginx.conf
+docker-compose.example.yml
+docker-compose.yml

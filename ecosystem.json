@@ -1,0 +1,21 @@
+{
+    "apps": [{
+        "name": "discord-bot",
+        "script": "./bot.js",
+        "log_date_format": "YYYY-MM-DD HH:mm Z",
+        "env": {
+            "NODE_ENV": "development",
+            "BATTLE_NET_KEY": "${BATTLE_NET_KEY}",
+            "DISCORD_KEY": "${DISCORD_KEY}",
+            "DEFAULT_REALM": "${DEFAULT_REALM}",
+            "DEFAULT_ORIGIN": "${DEFAULT_ORIGIN}",
+            "LOCALE": "${LOCALE}",
+            "TIMEZONE": "${TIMEZONE}",
+            "REPORTS_URL": "${REPORTS_URL}",
+            "DEBUG": "bot,bot:*"
+        },
+        "env_production" : {
+            "NODE_ENV": "production"
+        }
+    }]
+}

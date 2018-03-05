@@ -1,0 +1,21 @@
+{
+  "name": "simcraft-discord",
+  "version": "1.0.0",
+  "description": "Discord bot for simulate World of Warcraft characters",
+  "main": "bot.js",
+  "dependencies": {
+    "blizzard.js": "^2.1.0",
+    "debug": "^3.1.0",
+    "discord.js": "^11.2.1",
+    "moment": "^2.20.1",
+    "moment-timezone": "^0.5.14",
+    "numeral": "^2.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": {
+    "name": "Alexey Shishkov",
+    "email": "cookies.eater.03@gmail.com"
+  },
+  "license": "MIT"
+}
