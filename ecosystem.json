@@ -1,7 +1,7 @@
 {
     "apps": [{
         "name": "discord-bot",
-        "script": "./bot.js",
+        "script": "./src/bot.js",
         "log_date_format": "YYYY-MM-DD HH:mm Z",
         "env": {
             "NODE_ENV": "development",

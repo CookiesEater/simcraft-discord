@@ -2,6 +2,13 @@
   "name": "simcraft-discord",
   "version": "1.0.0",
   "description": "Discord bot for simulate World of Warcraft characters",
+  "author": {
+    "name": "Alexey Shishkov",
+    "email": "cookies.eater.03@gmail.com"
+  },
+  "scripts": {
+    "lint": "eslint ./src"
+  },
   "main": "bot.js",
   "dependencies": {
     "blizzard.js": "^2.1.0",
@@ -11,11 +18,10 @@
     "moment-timezone": "^0.5.14",
     "numeral": "^2.0.6"
   },
-  "devDependencies": {},
-  "scripts": {},
-  "author": {
-    "name": "Alexey Shishkov",
-    "email": "cookies.eater.03@gmail.com"
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0"
   },
   "license": "MIT"
 }
