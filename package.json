@@ -7,7 +7,8 @@
     "email": "cookies.eater.03@gmail.com"
   },
   "scripts": {
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "jest": "jest --coverage"
   },
   "main": "bot.js",
   "dependencies": {
@@ -21,7 +22,8 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0"
+    "eslint-plugin-import": "^2.9.0",
+    "jest": "^22.4.3"
   },
   "license": "MIT"
 }
