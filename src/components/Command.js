@@ -11,7 +11,7 @@ class Command {
     this.realm = process.env.DEFAULT_REALM;
     this.origin = process.env.DEFAULT_ORIGIN;
 
-    this.clear();
+    this.prepare();
     this.parse();
   }
 
@@ -24,9 +24,9 @@ class Command {
       this.info = true;
     }
 
-    if (command.indexOf(' pawn') > 0) {
+    if (command.indexOf('pawn') !== -1) {
       this.pawn = true;
-      command = command.replace(/ pawn/, '').trim();
+      command = command.replace(/pawn/, '').trim();
     }
 
     if (command.match(/(\d+) цел(ь|и|ей)/)) {
@@ -38,12 +38,14 @@ class Command {
   }
 
   /**
-   * Очистка сообщения от мусора
+   * Подготовка сообщения.
    */
-  clear() {
+  prepare() {
     this.command = this.command
-      // Удаление всех упоминаний и спец символов
-      .replace(/(<@\d+>|[.?!,])/g, '')
+      // Удаление всех упоминаний и текста до него
+      .replace(/.*<@\d+>/, '')
+      // Удаление спец символов
+      .replace(/[.?!,:;]/g, '')
       .trim()
       .toLowerCase();
   }
