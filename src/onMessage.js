@@ -6,6 +6,7 @@ const ucfirst = require('./helpers/ucfirst');
 const pawn = require('./helpers/Pawn');
 const Command = require('./components/Command');
 const Simcarft = require('./components/Simcraft');
+const Simulation = require('./components/Simulation');
 
 const locale = process.env.LOCALE ? process.env.LOCALE : 'ru_RU';
 const timezone = process.env.TIMEZONE ? process.env.TIMEZONE : 'Europe/Moscow';
@@ -104,7 +105,7 @@ module.export = async (client, message) => {
   // Старт симуляции
   try {
     log(`Start simcraft for ${command.name}...`);
-    const simcraft = new Simcarft(command.name, command.realm, command.origin, reportName, command.pawn, command.targets);
+    const simulation = new Simulation();
     const embed = {
       color: 1552707,
       author: {
@@ -117,7 +118,17 @@ module.export = async (client, message) => {
       },
       fields: [],
     };
-    const data = await simcraft.simulate();
+
+    simulation
+      .setName(command.name)
+      .setRealm(command.realm)
+      .setOrigin(command.origin)
+      .setReportName(reportName)
+      .setEnemies(command.targets);
+    if (command.pawn) {
+      simulation.setScaling();
+    }
+    const data = await simulation.simulate();
     log(`Simulate for ${command.name} end successful`);
 
     if (command.targets > 1) {

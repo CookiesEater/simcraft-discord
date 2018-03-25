@@ -2,6 +2,7 @@ const debug = require('debug');
 const { spawn } = require('child_process');
 const os = require('os');
 const fs = require('fs');
+const Simulation = require('./Simulation');
 
 const error = debug('bot:error');
 const log = debug('bot:log');
@@ -10,14 +11,9 @@ log.log = console.log.bind(console); // eslint-disable-line no-console
 class Simcraft {
   /**
    * Конструктор.
-   * @param {String} name
-   * @param {String} realm
-   * @param {String} origin
-   * @param {String} reportName
-   * @param {Boolean} scaling
-   * @param {Number} enemies
+   * @param {Simulation} simulation
    */
-  constructor(name = '', realm = '', origin = '', reportName = '', scaling = false, enemies = 1) {
+  constructor(simulation = new Simulation()) {
     this.dockerParams = [
       'run',
       '-e', `apiKey=${process.env.BATTLE_NET_KEY}`,
@@ -27,7 +23,7 @@ class Simcraft {
       'cookieseater/simcraft:latest',
     ];
     this.defaultParams = [
-      `armory=${origin},${realm},${name}`,
+      `armory=${simulation.origin},${simulation.realm},${simulation.name}`,
       'json2=/simcraft-data/report.json',
       'report_details=0',
       'use_item_verification=0', // Убрать ошибки если не прописано use_item для используемых предметов
@@ -36,10 +32,10 @@ class Simcraft {
       // 'warrior_fixed_time=0',
       `threads=${os.cpus().length}`,
     ];
-    if (reportName) {
-      this.defaultParams.push(`html=/simcraft-reports/${reportName}.html`);
+    if (simulation.reportName) {
+      this.defaultParams.push(`html=/simcraft-reports/${simulation.reportName}.html`);
     }
-    if (scaling) {
+    if (simulation.scaling) {
       this.defaultParams.push('iterations=10000');
     } else {
       this.defaultParams.push('iterations=5000');
@@ -54,8 +50,8 @@ class Simcraft {
       'enemy=Fluffy_Pillow',
     ];
 
-    this.scaling = scaling;
-    this.enemies = enemies;
+    this.scaling = simulation.scaling;
+    this.enemies = simulation.enemies;
   }
 
   /**
