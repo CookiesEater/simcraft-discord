@@ -17,7 +17,7 @@ class Simcraft {
    * @param {Boolean} scaling
    * @param {Number} enemies
    */
-  constructor(name, realm, origin, reportName = '', scaling = false, enemies = 1) {
+  constructor(name = '', realm = '', origin = '', reportName = '', scaling = false, enemies = 1) {
     this.dockerParams = [
       'run',
       '-e', `apiKey=${process.env.BATTLE_NET_KEY}`,
