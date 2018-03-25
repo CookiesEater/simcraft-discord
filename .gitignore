@@ -27,3 +27,6 @@ Thumbs.db
 # NPM packages
 /node_modules
 .env
+
+# tests
+/coverage
