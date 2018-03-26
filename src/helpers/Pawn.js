@@ -8,7 +8,7 @@ class Pawn {
    */
   constructor(params) {
     this.name = params.name;
-    this.class = params.class;
+    this.class = params.class.replace(/\s+/, '');
     this.spec = params.spec;
     this.primaryStatName = params.primaryStatName;
     this.primaryStatValue = parseFloat(params.primaryStatValue).toFixed(2);
