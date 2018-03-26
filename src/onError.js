@@ -2,6 +2,6 @@ const debug = require('debug');
 
 const error = debug('bot:error');
 
-module.export = (err) => {
+module.exports = (err) => {
   error('Error: %s', err.toString());
 };

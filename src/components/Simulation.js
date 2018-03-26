@@ -112,4 +112,4 @@ class Simulation {
   }
 }
 
-module.export = Simulation;
+module.exports = Simulation;

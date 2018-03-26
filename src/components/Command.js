@@ -7,7 +7,7 @@ class Command {
     this.info = false;
     this.pawn = false;
     this.enemies = 1;
-    this.name = null;
+    this.name = '';
     this.realm = process.env.DEFAULT_REALM;
     this.origin = process.env.DEFAULT_ORIGIN;
 
@@ -34,7 +34,9 @@ class Command {
       command = command.replace(/\d+ цел(ь|и|ей)/, '').trim();
     }
 
-    [, this.name, , this.realm = process.env.DEFAULT_REALM, , this.origin = process.env.DEFAULT_ORIGIN] = command.match(/^([^-\s]+)([-\s]+(.+?)([-\s]+(eu|us|kr|tw))?)?$/i);
+    if (command) {
+      [, this.name, , this.realm = process.env.DEFAULT_REALM, , this.origin = process.env.DEFAULT_ORIGIN] = command.match(/^([^-\s]+)([-\s]+(.+?)([-\s]+(eu|us|kr|tw))?)?$/i);
+    }
   }
 
   /**

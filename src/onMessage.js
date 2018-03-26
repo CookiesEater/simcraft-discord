@@ -9,7 +9,7 @@ const log = debug('bot:log');
 
 log.log = console.log.bind(console); // eslint-disable-line no-console
 
-module.export = async (client, message) => {
+module.exports = async (client, message) => {
   if (!message.isMentioned(client.user)) {
     return;
   }
@@ -23,7 +23,7 @@ module.export = async (client, message) => {
     message.channel.send(`Я использую версию симкрафт:\n${data}`);
     return;
   }
-  if (command.name === null) {
+  if (!command.name) {
     return;
   }
 

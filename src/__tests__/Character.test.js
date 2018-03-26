@@ -17,20 +17,20 @@ describe('Character', () => {
   });
 
   it('not loaded if not found', async () => {
-    const character = new Character('not found', 'my server', 'origin');
+    const character = new Character('notfound', 'my server', 'origin');
     try {
       await character.load();
     } catch (error) {
-      expect(error).toEqual(new Error('Not found'));
+      expect(error).toBeDefined();
     }
   });
 
   it('not loaded if not found', async () => {
-    const character = new Character('not found', 'my server', 'origin');
+    const character = new Character('notfound', 'my server', 'origin');
     try {
       await character.load();
     } catch (error) {
-      expect(error).toEqual(new Error('Not found'));
+      expect(error).toBeDefined();
     }
   });
 

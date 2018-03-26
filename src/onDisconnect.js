@@ -2,7 +2,7 @@ const debug = require('debug');
 
 const error = debug('bot:error');
 
-module.export = (client, event) => {
+module.exports = (client, event) => {
   error(`Disconnect: code ${event.code}, reason "${event.reason}"`);
 
   // Вход заново если discord закрыл соединение нормально
