@@ -21,7 +21,7 @@ describe('Command', () => {
     expect(command.realm).toBe('default realm');
     expect(command.origin).toBe('default origin');
     expect(command.pawn).toBeTruthy();
-    expect(command.targets).toBe(2);
+    expect(command.enemies).toBe(2);
     expect(command.info).toBeFalsy();
 
     command = new Command('<@1234567889> Хардис-Ясеневый лес');
@@ -29,7 +29,7 @@ describe('Command', () => {
     expect(command.realm).toBe('ясеневый лес');
     expect(command.origin).toBe('default origin');
     expect(command.pawn).toBeFalsy();
-    expect(command.targets).toBe(1);
+    expect(command.enemies).toBe(1);
     expect(command.info).toBeFalsy();
 
     command = new Command('<@1234567889> pawn Хардис-Ясеневый лес-eu 5 целей');
@@ -37,7 +37,7 @@ describe('Command', () => {
     expect(command.realm).toBe('ясеневый лес');
     expect(command.origin).toBe('eu');
     expect(command.pawn).toBeTruthy();
-    expect(command.targets).toBe(5);
+    expect(command.enemies).toBe(5);
     expect(command.info).toBeFalsy();
   });
 });

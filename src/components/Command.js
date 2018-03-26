@@ -6,7 +6,7 @@ class Command {
     this.command = msg;
     this.info = false;
     this.pawn = false;
-    this.targets = 1;
+    this.enemies = 1;
     this.name = null;
     this.realm = process.env.DEFAULT_REALM;
     this.origin = process.env.DEFAULT_ORIGIN;
@@ -30,7 +30,7 @@ class Command {
     }
 
     if (command.match(/(\d+) цел(ь|и|ей)/)) {
-      this.targets = parseInt(this.command.match(/(\d+) цел(ь|и|ей)/)[1], 10);
+      this.enemies = parseInt(this.command.match(/(\d+) цел(ь|и|ей)/)[1], 10);
       command = command.replace(/\d+ цел(ь|и|ей)/, '').trim();
     }
 

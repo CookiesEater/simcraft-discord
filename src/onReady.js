@@ -7,7 +7,6 @@ log.log = console.log.bind(console); // eslint-disable-line no-console
 module.export = async (client) => {
   log('I\'m ready! My id is %s', client.user.id);
 
-  const simcraft = new Simcarft('', '', '');
-  const data = await simcraft.info();
-  client.user.setGame(data);
+  const data = await (new Simcarft()).info();
+  client.user.setActivity(data);
 };

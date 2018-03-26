@@ -11,7 +11,7 @@
             "DEFAULT_ORIGIN": "${DEFAULT_ORIGIN}",
             "LOCALE": "${LOCALE}",
             "TIMEZONE": "${TIMEZONE}",
-            "REPORTS_URL": "${REPORTS_URL}",
+            "REPORTS_BASE": "${REPORTS_BASE}",
             "DEBUG": "bot,bot:*"
         },
         "env_production" : {

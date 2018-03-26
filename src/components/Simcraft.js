@@ -32,9 +32,8 @@ class Simcraft {
       // 'warrior_fixed_time=0',
       `threads=${os.cpus().length}`,
     ];
-    if (simulation.reportName) {
-      this.defaultParams.push(`html=/simcraft-reports/${simulation.reportName}.html`);
-    }
+    this.defaultParams.push(`html=/simcraft-reports/${simulation.getReportName()}.html`);
+
     if (simulation.scaling) {
       this.defaultParams.push('iterations=10000');
     } else {

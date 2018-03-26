@@ -13,7 +13,7 @@ services:
       - DEFAULT_ORIGIN=eu # Default origin
       - LOCALE=ru_RU # Default lang
       - TIMEZONE=Europe/Moscow # Default timezone
-      - REPORTS_URL= # Url to report or empty if not need
+      - REPORTS_BASE= # Base url to report
     command: /bin/bash -c "envsubst < ecosystem.json > ecosystem.prod.json && pm2-docker start --auto-exit --env production ecosystem.prod.json"
   web:
     image: nginx
