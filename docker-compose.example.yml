@@ -15,6 +15,7 @@ services:
       - TIMEZONE=Europe/Moscow # Default timezone
       - REPORTS_BASE= # Base url to report
     command: /bin/bash -c "envsubst < ecosystem.json > ecosystem.prod.json && pm2-docker start --auto-exit --env production ecosystem.prod.json"
+    restart: always
   web:
     image: nginx
     volumes:
@@ -26,6 +27,7 @@ services:
       - NGINX_HOST= # Host of report server
       - NGINX_PORT=80 # Server port
     command: /bin/bash -c "envsubst < /etc/nginx/conf.d/site.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    restart: always
 volumes:
   simcraft-data:
     external: true
