@@ -2,7 +2,6 @@ const debug = require('debug');
 const { spawn } = require('child_process');
 const os = require('os');
 const fs = require('fs');
-const Simulation = require('./Simulation');
 
 const error = debug('bot:error');
 const log = debug('bot:log');
@@ -11,9 +10,11 @@ log.log = console.log.bind(console); // eslint-disable-line no-console
 class Simcraft {
   /**
    * Конструктор.
-   * @param {Simulation} simulation
+   * @param {String} name
+   * @param {String} realm
+   * @param {String} origin
    */
-  constructor(simulation = new Simulation()) {
+  constructor(name, realm, origin) {
     this.dockerParams = [
       'run',
       '-e', `apiKey=${process.env.BATTLE_NET_KEY}`,
@@ -22,35 +23,57 @@ class Simcraft {
       '--rm',
       'cookieseater/simcraft:latest',
     ];
-    this.defaultParams = [
-      `armory=${simulation.origin},${simulation.realm},${simulation.name}`,
-      'json2=/simcraft-data/report.json',
-      'report_details=0',
-      'use_item_verification=0', // Убрать ошибки если не прописано use_item для используемых предметов
-      'fight_style=Patchwerk',
-      'max_time=300',
-      // 'warrior_fixed_time=0',
-      `threads=${os.cpus().length}`,
-    ];
-    this.defaultParams.push(`html=/simcraft-reports/${simulation.getReportName()}.html`);
+    this.defaultParams = {
+      armory: `${origin},${realm},${name}`,
+      json2: '/simcraft-data/report.json',
+      report_details: 0,
+      use_item_verification: 0, // Убрать ошибки если не прописано use_item для используемых предметов
+      fight_style: 'Patchwerk',
+      max_time: 300,
+      threads: os.cpus().length,
+      iterations: 5000,
+    };
+    this.scalingParams = {
+      calculate_scale_factors: 1,
+      scale_only: 'agility,strength,intellect,crit_rating,haste_rating,mastery_rating,versatility_rating',
+      normalize_scale_factors: 1,
+    };
+    this.enemyParams = {
+      enemy: 'Fluffy_Pillow',
+    };
 
-    if (simulation.scaling) {
-      this.defaultParams.push('iterations=10000');
+    this.scaling = false;
+    this.enemies = 1;
+  }
+
+  /**
+   * Установка имени для html отчёта.
+   * @param {String} name
+   */
+  setReport(name) {
+    this.defaultParams.html = `/simcraft-reports/${name}.html`;
+  }
+
+  /**
+   * Установка скалирования.
+   * @param {Boolean} isTrue
+   */
+  setScaling(isTrue = true) {
+    if (isTrue) {
+      this.defaultParams.iterations = 10000;
     } else {
-      this.defaultParams.push('iterations=5000');
+      this.defaultParams.iterations = 5000;
     }
 
-    this.scalingParams = [
-      'calculate_scale_factors=1',
-      'scale_only=agility,strength,intellect,crit_rating,haste_rating,mastery_rating,versatility_rating',
-      'normalize_scale_factors=1',
-    ];
-    this.enemyParams = [
-      'enemy=Fluffy_Pillow',
-    ];
+    this.scaling = isTrue === true;
+  }
 
-    this.scaling = simulation.scaling;
-    this.enemies = simulation.enemies;
+  /**
+   * Установка количества врагов.
+   * @param {Number} enemies
+   */
+  setEnemies(enemies) {
+    this.enemies = enemies;
   }
 
   /**
@@ -100,7 +123,11 @@ class Simcraft {
       });
 
       simcraft.on('close', () => {
-        resolve(out.match(/SimulationCraft.*/)[0]);
+        if (/SimulationCraft.*/.test(out)) {
+          resolve(out.match(/SimulationCraft.*/)[0]);
+        } else {
+          resolve('Unknown version');
+        }
       });
     });
   }
@@ -111,15 +138,32 @@ class Simcraft {
    * @private
    */
   getProcessParams() {
-    let params = this.dockerParams.concat(this.defaultParams);
+    let params = this.dockerParams;
+
+    params = params.concat(this.prepareObjectParams(this.defaultParams));
     if (this.scaling) {
-      params = params.concat(this.scalingParams);
+      params = params.concat(this.prepareObjectParams(this.scalingParams));
     }
     for (let i = 0; i < this.enemies; i++) {
-      params = params.concat(this.enemyParams);
+      params = params.concat(this.prepareObjectParams(this.enemyParams));
     }
 
     return params;
+  }
+
+  /**
+   * Преобразует параметры из объектной вида в массив для spawn()
+   * @param {Object} params
+   * @returns {Array}
+   * @private
+   */
+  prepareObjectParams(params) {
+    let result = [];
+    Object.keys(params).map((key) => {
+      result.push(`${key}=${params[key]}`);
+    });
+
+    return result;
   }
 }
 
