@@ -8,7 +8,8 @@
   },
   "scripts": {
     "lint": "eslint ./src",
-    "jest": "jest --coverage"
+    "jest": "jest",
+    "coverage": "jest --coverage"
   },
   "main": "bot.js",
   "dependencies": {
