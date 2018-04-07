@@ -91,13 +91,16 @@ class Simcraft {
       });
 
       simcraft.on('close', (code) => {
+        console.log(code);
         if (code !== 0) {
           reject(new Error(`Exit with code ${code}`));
+          return;
         }
 
         fs.readFile('/simcraft-data/report.json', 'utf8', (err, data) => {
           if (err) {
             reject(err);
+            return;
           }
 
           resolve(JSON.parse(data));
