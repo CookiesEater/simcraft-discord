@@ -18,7 +18,7 @@ module.exports = async (client, message) => {
   const command = new Command(message.content);
   if (command.info) {
     log('Send info message');
-    const data = await (new Simcarft()).info();
+    const data = await (new Simcarft('', '', '')).info();
 
     message.channel.send(`Я использую версию симкрафт:\n${data}`);
     return;
