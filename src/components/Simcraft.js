@@ -91,7 +91,6 @@ class Simcraft {
       });
 
       simcraft.on('close', (code) => {
-        console.log(code);
         if (code !== 0) {
           reject(new Error(`Exit with code ${code}`));
           return;
