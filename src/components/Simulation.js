@@ -9,6 +9,9 @@ moment.tz.setDefault(process.env.TIMEZONE);
 moment.locale(process.env.LOCALE);
 
 class Simulation {
+  /**
+   * @param {Character} character
+   */
   constructor(character) {
     this.character = character;
     this.scaling = false;
@@ -18,9 +21,10 @@ class Simulation {
 
   /**
    * Включение скалирования
+   * @param {Boolean} isTrue
    */
-  setScaling() {
-    this.scaling = true;
+  setScaling(isTrue = true) {
+    this.scaling = isTrue === true;
   }
 
   /**
@@ -88,7 +92,7 @@ class Simulation {
 
       richEmbed.addField('Вес статов:', `\`\`\`${pawn({
         name: ucfirst(this.character.name),
-        class: this.report.sim.players[0].specialization.match(/\\s+(.+)/)[1].replace(/\\s+/, ''),
+        class: this.report.sim.players[0].specialization.match(/\s+(.+)/)[1],
         spec: this.report.sim.players[0].specialization.split(' ')[0],
         crit: this.report.sim.players[0].scale_factors.Crit,
         haste: this.report.sim.players[0].scale_factors.Haste,
@@ -108,7 +112,11 @@ class Simulation {
    * @returns {Promise}
    */
   async simulate() {
-    this.report = await (new Simcarft(this)).simulate();
+    const simcraft = new Simcarft(this.character.name, this.character.realm, this.character.origin);
+    simcraft.setScaling(this.scaling);
+    simcraft.setEnemies(this.enemies);
+    simcraft.setReport(this.getReportName());
+    this.report = await simcraft.simulate();
   }
 }
 
