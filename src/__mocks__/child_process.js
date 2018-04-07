@@ -1,7 +1,7 @@
-const child_process = {
+const childProcess = {
   spawn: jest.fn(),
 };
-child_process.spawn.mockReturnValue({
+childProcess.spawn.mockReturnValue({
   on: (event, callback) => {
     if (event === 'close') {
       callback(0);
@@ -15,4 +15,4 @@ child_process.spawn.mockReturnValue({
   },
 });
 
-module.exports = child_process;
+module.exports = childProcess;

@@ -1,5 +1,5 @@
 const os = require('os');
-const child_process = require('child_process');
+const { spawn } = require('child_process');
 const Simcraft = require('./../components/Simcraft');
 
 jest.mock('child_process');
@@ -14,7 +14,7 @@ describe('Simcraft', () => {
     const simcraft = new Simcraft('test', 'long realm', 'origin');
     const report = simcraft.simulate();
 
-    expect(child_process.spawn).toHaveBeenCalledWith('docker', [
+    expect(spawn).toHaveBeenCalledWith('docker', [
       'run',
       '-e', 'apiKey=123',
       '-v', 'simcraft-data:/simcraft-data',
@@ -37,7 +37,7 @@ describe('Simcraft', () => {
     simcraft.setReport('report');
     simcraft.simulate();
 
-    expect(child_process.spawn).toHaveBeenCalledWith('docker', [
+    expect(spawn).toHaveBeenCalledWith('docker', [
       'run',
       '-e', 'apiKey=123',
       '-v', 'simcraft-data:/simcraft-data',
@@ -70,7 +70,7 @@ describe('Simcraft', () => {
     const simcraft = new Simcraft('test', 'long realm', 'origin');
     const info = await simcraft.info();
 
-    expect(child_process.spawn).toHaveBeenCalledWith('docker', [
+    expect(spawn).toHaveBeenCalledWith('docker', [
       'run',
       '-e', 'apiKey=123',
       '-v', 'simcraft-data:/simcraft-data',

@@ -1,4 +1,5 @@
 const report = require('./report.json');
+
 const fs = jest.genMockFromModule('fs');
 
 fs.readFile = (filename, encoding, callback) => {

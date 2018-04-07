@@ -158,10 +158,8 @@ class Simcraft {
    * @private
    */
   prepareObjectParams(params) {
-    let result = [];
-    Object.keys(params).map((key) => {
-      result.push(`${key}=${params[key]}`);
-    });
+    const result = [];
+    Object.keys(params).map(key => result.push(`${key}=${params[key]}`));
 
     return result;
   }
