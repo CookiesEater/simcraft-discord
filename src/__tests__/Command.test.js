@@ -32,6 +32,14 @@ describe('Command', () => {
     expect(command.enemies).toBe(1);
     expect(command.info).toBeFalsy();
 
+    command = new Command('<@1234567889> fail-fail-eu');
+    expect(command.name).toBe('fail');
+    expect(command.realm).toBe('fail');
+    expect(command.origin).toBe('eu');
+    expect(command.pawn).toBeFalsy();
+    expect(command.enemies).toBe(1);
+    expect(command.info).toBeFalsy();
+
     command = new Command('<@1234567889> pawn Хардис-Ясеневый лес-eu 5 целей');
     expect(command.name).toBe('хардис');
     expect(command.realm).toBe('ясеневый лес');
