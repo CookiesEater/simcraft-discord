@@ -1,4 +1,5 @@
-const character = require('./character.json');
+const characterDd = require('./character-dd.json');
+const characterHealer = require('./character-healer.json');
 
 const blizzard = {
   initialize: () => ({
@@ -17,11 +18,10 @@ const blizzard = {
         }
 
         if (data.name === 'healer') {
-          character.talents[0].spec.name = 'Свет';
-          character.talents[0].spec.role = 'HEALING';
+          resolve({ data: characterHealer });
+        } else {
+          resolve({ data: characterDd });
         }
-
-        resolve({ data: character });
       }),
     },
   }),

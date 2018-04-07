@@ -1,0 +1,409 @@
+{
+  "lastModified": 1523126208000,
+  "name": "Хардис",
+  "realm": "Галакронд",
+  "battlegroup": "Sturmangriff / Charge",
+  "class": 5,
+  "race": 10,
+  "gender": 0,
+  "level": 110,
+  "achievementPoints": 25645,
+  "thumbnail": "galakrond/159/58021023-avatar.jpg",
+  "calcClass": "X",
+  "faction": 1,
+  "talents": [{
+    "talents": [{
+      "tier": 6,
+      "column": 0,
+      "spell": {
+        "id": 193225,
+        "name": "Наследие Бездны",
+        "icon": "inv_enchant_voidcrystal",
+        "description": "\"Извержение Бездны\" можно активировать в любой момент, если у вас накоплено как минимум 65 ед. безумия. \"Облик Бездны\" дополнительно увеличивает наносимый урон от темной магии на 5%.",
+        "castTime": "Пассивная"
+      },
+      "spec": {
+        "name": "Тьма",
+        "role": "DPS",
+        "backgroundImage": "bg-priest-shadow",
+        "icon": "spell_shadow_shadowwordpain",
+        "description": "Для уничтожения врагов пользуется магией Тьмы, предпочитая заклинания, наносящие периодический урон.",
+        "order": 2
+      }
+    }, {
+      "tier": 1,
+      "column": 1,
+      "spell": {
+        "id": 64129,
+        "name": "Тело и душа",
+        "icon": "spell_holy_symbolofhope",
+        "description": "\"Слово силы: Щит\" и \"Духовное рвение\" повышают скорость передвижения цели на 40% на 3 сек.",
+        "castTime": "Пассивная"
+      }
+    }, {
+      "tier": 2,
+      "column": 0,
+      "spell": {
+        "id": 205369,
+        "name": "Мыслебомба",
+        "icon": "spell_shadow_mindbomb",
+        "description": "Поражает цель \"Мыслебомбой\".\n\n\n\nЧерез 2 сек. или в момент гибели цели происходит взрыв ментальной энергии, оглушающий всех противников в радиусе 8м от цели на 4 сек.",
+        "range": "30 м",
+        "castTime": "Мгновенное применение",
+        "cooldown": "Время восстановления: 30 сек."
+      },
+      "spec": {
+        "name": "Тьма",
+        "role": "DPS",
+        "backgroundImage": "bg-priest-shadow",
+        "icon": "spell_shadow_shadowwordpain",
+        "description": "Для уничтожения врагов пользуется магией Тьмы, предпочитая заклинания, наносящие периодический урон.",
+        "order": 2
+      }
+    }, {
+      "tier": 4,
+      "column": 1,
+      "spell": {
+        "id": 155271,
+        "name": "Благосклонные духи",
+        "icon": "ability_priest_auspiciousspirits",
+        "description": "Ваши сумеречные призраки наносят на 100% больше урона и создают 3 ед. безумия.",
+        "castTime": "Пассивная"
+      },
+      "spec": {
+        "name": "Тьма",
+        "role": "DPS",
+        "backgroundImage": "bg-priest-shadow",
+        "icon": "spell_shadow_shadowwordpain",
+        "description": "Для уничтожения врагов пользуется магией Тьмы, предпочитая заклинания, наносящие периодический урон.",
+        "order": 2
+      }
+    }, {
+      "tier": 5,
+      "column": 2,
+      "spell": {
+        "id": 200174,
+        "name": "Подчиняющий разум",
+        "icon": "spell_shadow_soulleech_3",
+        "description": "Призывает подчиняющего разум, который атакует вашу цель в течение 15 сек.\n\n\n\nСоздает 8 ед. безумия каждый раз, когда подчиняющий разум атакует.",
+        "range": "40 м",
+        "castTime": "Мгновенное применение",
+        "cooldown": "Время восстановления: 1 мин."
+      },
+      "spec": {
+        "name": "Тьма",
+        "role": "DPS",
+        "backgroundImage": "bg-priest-shadow",
+        "icon": "spell_shadow_shadowwordpain",
+        "description": "Для уничтожения врагов пользуется магией Тьмы, предпочитая заклинания, наносящие периодический урон.",
+        "order": 2
+      }
+    }, {
+      "tier": 0,
+      "column": 0,
+      "spell": {
+        "id": 109142,
+        "name": "Прихоти судьбы",
+        "icon": "spell_shadow_mindtwisting",
+        "description": "Каждый раз при применении исцеляющих заклинаний к цели, у которой осталось менее 35% здоровья, в течение 10 сек. наносимый вами урон увеличивается на 20%, а эффективность исцеления повышается на 20%.",
+        "castTime": "Пассивная"
+      },
+      "spec": {
+        "name": "Тьма",
+        "role": "DPS",
+        "backgroundImage": "bg-priest-shadow",
+        "icon": "spell_shadow_shadowwordpain",
+        "description": "Для уничтожения врагов пользуется магией Тьмы, предпочитая заклинания, наносящие периодический урон.",
+        "order": 2
+      }
+    }, {
+      "tier": 3,
+      "column": 0,
+      "spell": {
+        "id": 199849,
+        "name": "Неотступное безумие",
+        "icon": "spell_shadow_twistedfaith",
+        "description": "По завершении действия \"Облика Бездны\" его бонус к показателю скорости уменьшается на 2% каждую секунду, а не исчезает сразу.",
+        "castTime": "Пассивная"
+      },
+      "spec": {
+        "name": "Тьма",
+        "role": "DPS",
+        "backgroundImage": "bg-priest-shadow",
+        "icon": "spell_shadow_shadowwordpain",
+        "description": "Для уничтожения врагов пользуется магией Тьмы, предпочитая заклинания, наносящие периодический урон.",
+        "order": 2
+      }
+    }],
+    "spec": {
+      "name": "Тьма",
+      "role": "DPS",
+      "backgroundImage": "bg-priest-shadow",
+      "icon": "spell_shadow_shadowwordpain",
+      "description": "Для уничтожения врагов пользуется магией Тьмы, предпочитая заклинания, наносящие периодический урон.",
+      "order": 2
+    },
+    "calcTalent": "0100120",
+    "calcSpec": "b"
+  }, {
+    "selected": true,
+    "talents": [{
+      "tier": 6,
+      "column": 1,
+      "spell": {
+        "id": 193157,
+        "name": "Благодарение",
+        "icon": "spell_monk_diffusemagic",
+        "description": "Ваша \"Молитва восстановления\" с вероятностью 40% накладывает на каждую исцеленную цель эффект \"Обновление\".",
+        "castTime": "Пассивная"
+      },
+      "spec": {
+        "name": "Свет",
+        "role": "HEALING",
+        "backgroundImage": "bg-priest-holy",
+        "icon": "spell_holy_guardianspirit",
+        "description": "Универсальный лекарь, который исцеляет одиночные цели и группы и может лечить даже после смерти.",
+        "order": 1
+      }
+    }, {
+      "tier": 1,
+      "column": 0,
+      "spell": {
+        "id": 121536,
+        "name": "Божественное перышко",
+        "icon": "ability_priest_angelicfeather",
+        "description": "Размещает в указанном месте перышко. Скорость передвижения первого прошедшего по нему союзника повышается на 40% на 5 сек. Единовременно можно разместить не более 3 перышек. Максимум 3 заряда.",
+        "range": "40 м",
+        "castTime": "Мгновенное применение"
+      }
+    }, {
+      "tier": 3,
+      "column": 0,
+      "spell": {
+        "id": 196985,
+        "name": "Свет наару",
+        "icon": "inv_pet_naaru",
+        "description": "\"Прозорливость\" дополнительно сокращает оставшееся время восстановления соответствующего слова Света на 2 сек.",
+        "castTime": "Пассивная"
+      },
+      "spec": {
+        "name": "Свет",
+        "role": "HEALING",
+        "backgroundImage": "bg-priest-holy",
+        "icon": "spell_holy_guardianspirit",
+        "description": "Универсальный лекарь, который исцеляет одиночные цели и группы и может лечить даже после смерти.",
+        "order": 1
+      }
+    }, {
+      "tier": 4,
+      "column": 1,
+      "spell": {
+        "id": 32546,
+        "name": "Связующее исцеление",
+        "icon": "spell_holy_blindingheal",
+        "description": "Восстанавливает 18 018 ед. здоровья вам, дружественной цели и еще одной дружественной цели в радиусе 20 м.\n\n\n\nВызывает срабатывание эффекта \"Прозорливость\", сокращающего время восстановления способностей \"Слово Света: Безмятежность\" и \"Слово Света: Освящение\" на 3 сек.",
+        "range": "40 м",
+        "powerCost": "1,7% от базового количества маны",
+        "castTime": "Время применения 1,5 сек."
+      },
+      "spec": {
+        "name": "Свет",
+        "role": "HEALING",
+        "backgroundImage": "bg-priest-holy",
+        "icon": "spell_holy_guardianspirit",
+        "description": "Универсальный лекарь, который исцеляет одиночные цели и группы и может лечить даже после смерти.",
+        "order": 1
+      }
+    }, {
+      "tier": 2,
+      "column": 2,
+      "spell": {
+        "id": 196707,
+        "name": "Жизнь после смерти",
+        "icon": "inv_enchant_essencemagiclarge",
+        "description": "Увеличивает время действия \"Духа воздаяния\" на 50%.",
+        "castTime": "Пассивная"
+      },
+      "spec": {
+        "name": "Свет",
+        "role": "HEALING",
+        "backgroundImage": "bg-priest-holy",
+        "icon": "spell_holy_guardianspirit",
+        "description": "Универсальный лекарь, который исцеляет одиночные цели и группы и может лечить даже после смерти.",
+        "order": 1
+      }
+    }, {
+      "tier": 5,
+      "column": 0,
+      "spell": {
+        "id": 197031,
+        "name": "Божественность",
+        "icon": "ability_priest_ascendance",
+        "description": "Когда вы восстанавливаете здоровье с помощью слова Света, эффективность вашего исцеления увеличивается на 15% в течение 6 сек.",
+        "castTime": "Пассивная"
+      }
+    }, {
+      "tier": 0,
+      "column": 2,
+      "spell": {
+        "id": 193155,
+        "name": "Просветление",
+        "icon": "spell_arcane_mindmastery",
+        "description": "Вы восполняете ману на 10% быстрее.",
+        "castTime": "Пассивная"
+      },
+      "spec": {
+        "name": "Свет",
+        "role": "HEALING",
+        "backgroundImage": "bg-priest-holy",
+        "icon": "spell_holy_guardianspirit",
+        "description": "Универсальный лекарь, который исцеляет одиночные цели и группы и может лечить даже после смерти.",
+        "order": 1
+      }
+    }],
+    "spec": {
+      "name": "Свет",
+      "role": "HEALING",
+      "backgroundImage": "bg-priest-holy",
+      "icon": "spell_holy_guardianspirit",
+      "description": "Универсальный лекарь, который исцеляет одиночные цели и группы и может лечить даже после смерти.",
+      "order": 1
+    },
+    "calcTalent": "2020101",
+    "calcSpec": "Z"
+  }, {
+    "talents": [{
+      "tier": 5,
+      "column": 0,
+      "spell": {
+        "id": 204197,
+        "name": "Очищение зла",
+        "icon": "ability_mage_firestarter",
+        "description": "Очищает цель огнем, нанося ей 6 006 ед. урона от огня и дополнительно 31 330 ед. урона от огня в течение 20 сек. Переходит на дополнительного находящегося поблизости противника, когда вы применяете к цели \"Исповедь\".",
+        "range": "40 м",
+        "powerCost": "2% от базового количества маны",
+        "castTime": "Мгновенное применение"
+      },
+      "spec": {
+        "name": "Послушание",
+        "role": "HEALING",
+        "backgroundImage": "bg-priest-discipline",
+        "icon": "spell_holy_powerwordshield",
+        "description": "Использует магию для защиты союзников и исцеления их ран.",
+        "order": 0
+      }
+    }, {
+      "tier": 0,
+      "column": 0,
+      "spell": {
+        "id": 109142,
+        "name": "Прихоти судьбы",
+        "icon": "spell_shadow_mindtwisting",
+        "description": "Каждый раз при применении исцеляющих заклинаний к цели, у которой осталось менее 35% здоровья, в течение 10 сек. наносимый вами урон увеличивается на 20%, а эффективность исцеления повышается на 20%.",
+        "castTime": "Пассивная"
+      },
+      "spec": {
+        "name": "Послушание",
+        "role": "HEALING",
+        "backgroundImage": "bg-priest-discipline",
+        "icon": "spell_holy_powerwordshield",
+        "description": "Использует магию для защиты союзников и исцеления их ран.",
+        "order": 0
+      }
+    }, {
+      "tier": 2,
+      "column": 0,
+      "spell": {
+        "id": 204263,
+        "name": "Сияющая мощь",
+        "icon": "ability_paladin_blindinglight2",
+        "description": "Создает рядом с дружественной целью вспышку света, отталкивая находящихся поблизости противников и снижая их скорость передвижения на 70% на 3 сек.",
+        "range": "40 м",
+        "powerCost": "2,5% от базового количества маны",
+        "castTime": "Мгновенное применение",
+        "cooldown": "Время восстановления: 45 сек."
+      }
+    }, {
+      "tier": 3,
+      "column": 2,
+      "spell": {
+        "id": 123040,
+        "name": "Подчиняющий разум",
+        "icon": "spell_shadow_soulleech_3",
+        "description": "Призывает подчиняющего разум, который атакует вашу цель в течение 12 сек. Атаки подчиняющего разум восполняют вам 0,50% от максимального запаса маны.",
+        "range": "40 м",
+        "castTime": "Мгновенное применение",
+        "cooldown": "Время восстановления: 1 мин."
+      }
+    }, {
+      "tier": 1,
+      "column": 0,
+      "spell": {
+        "id": 121536,
+        "name": "Божественное перышко",
+        "icon": "ability_priest_angelicfeather",
+        "description": "Размещает в указанном месте перышко. Скорость передвижения первого прошедшего по нему союзника повышается на 40% на 5 сек. Единовременно можно разместить не более 3 перышек. Максимум 3 заряда.",
+        "range": "40 м",
+        "castTime": "Мгновенное применение"
+      }
+    }, {
+      "tier": 6,
+      "column": 1,
+      "spell": {
+        "id": 200309,
+        "name": "Милость",
+        "subtext": "Пассивная",
+        "icon": "spell_holy_hopeandgrace",
+        "description": "Увеличивает на 30% ваше исцеление от всех способностей, помимо \"Искупления вины\", и объем поглощаемого урона для всех целей, на которых наложено \"Искупление вины\".",
+        "castTime": "Пассивная"
+      }
+    }, {
+      "tier": 4,
+      "column": 1,
+      "spell": {
+        "id": 152118,
+        "name": "Ясность воли",
+        "icon": "ability_priest_clarityofwill",
+        "description": "Окружает цель магической защитой, поглощающей 54 054 ед. урона в течение 20 сек.",
+        "range": "40 м",
+        "powerCost": "2,79% от базового количества маны",
+        "castTime": "Время применения 2 сек."
+      }
+    }],
+    "spec": {
+      "name": "Послушание",
+      "role": "HEALING",
+      "backgroundImage": "bg-priest-discipline",
+      "icon": "spell_holy_powerwordshield",
+      "description": "Использует магию для защиты союзников и исцеления их ран.",
+      "order": 0
+    },
+    "calcTalent": "0002101",
+    "calcSpec": "a"
+  }, {
+    "talents": [],
+    "calcTalent": "",
+    "calcSpec": ""
+  }, {
+    "talents": [],
+    "calcTalent": "",
+    "calcSpec": ""
+  }, {
+    "talents": [],
+    "calcTalent": "",
+    "calcSpec": ""
+  }, {
+    "talents": [],
+    "calcTalent": "",
+    "calcSpec": ""
+  }, {
+    "talents": [],
+    "calcTalent": "",
+    "calcSpec": ""
+  }, {
+    "talents": [],
+    "calcTalent": "",
+    "calcSpec": ""
+  }],
+  "totalHonorableKills": 46419
+}
